@@ -1,17 +1,17 @@
 {
     "version": "0.1",
     "urls": [
-        ["blaseball2040/assets/logo.bin", "github:North101/blaseball2040/blaseball2040/assets/logo.bin"],
-        ["blaseball2040/assets/stats.bin", "github:North101/blaseball2040/blaseball2040/assets/stats.bin"],
-        ["blaseball2040/assets/vs.bin", "github:North101/blaseball2040/blaseball2040/assets/vs.bin"],
-        ["blaseball2040/__init__.py", "github:North101/blaseball2040/blaseball2040/__init__.py"],
-        ["blaseball2040/app.py", "github:North101/blaseball2040/blaseball2040/app.py"],
-        ["blaseball2040/pitch_screen.py", "github:North101/blaseball2040/blaseball2040/pitch_screen.py"],
-        ["blaseball2040/score_screen.py", "github:North101/blaseball2040/blaseball2040/score_screen.py"],
-        ["blaseball2040/select_screen.py", "github:North101/blaseball2040/blaseball2040/select_screen.py"],
-        ["blaseball2040/splash_screen.py", "github:North101/blaseball2040/blaseball2040/splash_screen.py"],
-        ["blaseball2040/stat_screen.py", "github:North101/blaseball2040/blaseball2040/stat_screen.py"],
-        ["blaseball2040/team_score.py", "github:North101/blaseball2040/blaseball2040/team_score.py"]
+        ["blaseball2040/assets/logo.bin", "file:blaseball2040/blaseball2040/assets/logo.bin"],
+        ["blaseball2040/assets/stats.bin", "file:blaseball2040/blaseball2040/assets/stats.bin"],
+        ["blaseball2040/assets/vs.bin", "file:blaseball2040/blaseball2040/assets/vs.bin"],
+        ["blaseball2040/__init__.py", "file:blaseball2040/blaseball2040/__init__.py"],
+        ["blaseball2040/app.py", "file:blaseball2040/blaseball2040/app.py"],
+        ["blaseball2040/pitch_screen.py", "file:blaseball2040/blaseball2040/pitch_screen.py"],
+        ["blaseball2040/score_screen.py", "file:blaseball2040/blaseball2040/score_screen.py"],
+        ["blaseball2040/select_screen.py", "file:blaseball2040/blaseball2040/select_screen.py"],
+        ["blaseball2040/splash_screen.py", "file:blaseball2040/blaseball2040/splash_screen.py"],
+        ["blaseball2040/stat_screen.py", "file:blaseball2040/blaseball2040/stat_screen.py"],
+        ["blaseball2040/team_score.py", "file:blaseball2040/blaseball2040/team_score.py"]
     ],
     "deps": [
         ["github:North101/badger_ui", "master"]
