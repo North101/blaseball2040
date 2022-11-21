@@ -2,12 +2,13 @@ import badger2040
 from badger_ui import App, Offset, Size, Widget
 from badger_ui.util import Image
 
+import blaseball2040
 from blaseball2040.select_screen import SelectScreen
 
 
 class SplashScreen(Widget):
-  def __init__(self) -> None:  
-    self.logo = Image('blaseball2040/assets/logo.bin', 296, 128)
+  def __init__(self) -> None:
+    self.logo = Image(f'{blaseball2040.root_dir}/assets/logo.bin', 296, 128)
     self.logo.load()
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:

@@ -9,6 +9,7 @@ from badger_ui.stack import Stack
 from badger_ui.text import TextWidget
 from badger_ui.util import Image
 
+import blaseball2040
 from blaseball2040.stat_screen import Game, StatScreen
 
 teams = [
@@ -19,7 +20,7 @@ teams = [
 
 class SelectScreen(Widget):
   def __init__(self) -> None:
-    self.vs_image = Image('blaseball2040/assets/vs.bin', 296, 128)
+    self.vs_image = Image(f'{blaseball2040.root_dir}/assets/vs.bin', 296, 128)
     self.vs_image.load()
 
     self.player_index = 0
