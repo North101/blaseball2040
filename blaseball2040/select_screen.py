@@ -20,7 +20,7 @@ teams = [
 
 class SelectScreen(Widget):
   def __init__(self) -> None:
-    self.vs_image = Image(f'{blaseball2040.root_dir}/assets/vs.bin', 296, 128)
+    self.vs_image = Image(f'{blaseball2040.assets_dir}/vs.bin', 296, 128)
     self.vs_image.load()
 
     self.player_index = 0

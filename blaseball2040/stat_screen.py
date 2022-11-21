@@ -56,7 +56,7 @@ class StatScreen(Widget):
   ]
 
   def __init__(self, game: Game):
-    self.icons = IconSheet(f'{blaseball2040.root_dir}/assets/stats.bin', 32, 3)
+    self.icons = IconSheet(f'{blaseball2040.assets_dir}/stats.bin', 32, 3)
     self.icons.load()
 
     self.game = game
