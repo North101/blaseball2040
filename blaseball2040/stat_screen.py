@@ -10,7 +10,7 @@ from badger_ui.stack import Stack
 from badger_ui.text import TextWidget
 from badger_ui.util import IconSheet
 
-import blaseball2040
+from blaseball2040 import assets_dir
 from blaseball2040.team_score import TeamScore
 
 
@@ -56,7 +56,7 @@ class StatScreen(Widget):
   ]
 
   def __init__(self, game: Game):
-    self.icons = IconSheet(f'{blaseball2040.assets_dir}/stats.bin', 32, 3)
+    self.icons = IconSheet(f'{assets_dir}/stats.bin', 32, 3)
     self.icons.load()
 
     self.game = game
