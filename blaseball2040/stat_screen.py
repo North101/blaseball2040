@@ -82,7 +82,6 @@ class StatScreen(Widget):
 
     elif pressed[badger2040.BUTTON_C]:
       self.selected_index = (self.selected_index + 1) % 3
-
       return True
 
     elif pressed[badger2040.BUTTON_UP]:
