@@ -1,4 +1,4 @@
-import badger2040
+import badger2040w
 from badger_ui import App, Offset, Size, Widget
 from badger_ui.align import Center
 from badger_ui.column import Column
@@ -18,7 +18,7 @@ class ScoreScreen(Widget):
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
     from blaseball2040.splash_screen import SplashScreen
-    if pressed[badger2040.BUTTON_B]:
+    if pressed[badger2040w.BUTTON_B]:
       app.child = SplashScreen()
       return True
 

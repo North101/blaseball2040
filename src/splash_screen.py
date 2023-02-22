@@ -1,4 +1,4 @@
-import badger2040
+import badger2040w
 from badger_ui import App, Offset, Size, Widget
 from badger_ui.util import Image
 
@@ -12,7 +12,7 @@ class SplashScreen(Widget):
     self.logo.load()
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_B]:
+    if pressed[badger2040w.BUTTON_B]:
       app.child = SelectScreen()
       return True
 

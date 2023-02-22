@@ -1,4 +1,4 @@
-import badger2040
+import badger2040w
 from badger_ui import App, Offset, Size, Widget
 from badger_ui.align import Center
 from badger_ui.column import Column
@@ -34,11 +34,11 @@ class SelectScreen(Widget):
     self.child: Widget | None = None
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_A]:
+    if pressed[badger2040w.BUTTON_A]:
       self.player_index = (self.player_index - 1) % 2
       return True
 
-    elif pressed[badger2040.BUTTON_B]:
+    elif pressed[badger2040w.BUTTON_B]:
       app.display.invert(False)
       app.child = StatScreen(
           game=Game(
@@ -48,15 +48,15 @@ class SelectScreen(Widget):
       )
       return True
 
-    elif pressed[badger2040.BUTTON_C]:
+    elif pressed[badger2040w.BUTTON_C]:
       self.player_index = (self.player_index + 1) % 2
       return True
 
-    elif pressed[badger2040.BUTTON_UP]:
+    elif pressed[badger2040w.BUTTON_UP]:
       self.player_team_index[self.player_index] = (self.player_team_index[self.player_index] + 1) % len(teams)
       return True
 
-    elif pressed[badger2040.BUTTON_DOWN]:
+    elif pressed[badger2040w.BUTTON_DOWN]:
       self.player_team_index[self.player_index] = (self.player_team_index[self.player_index] - 1) % len(teams)
       return True
 

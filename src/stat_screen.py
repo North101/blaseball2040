@@ -1,4 +1,4 @@
-import badger2040
+import badger2040w
 from badger_ui import App, Offset, Size, Widget
 from badger_ui.align import Center
 from badger_ui.column import Column
@@ -50,9 +50,9 @@ class Game:
 
 class StatScreen(Widget):
   stat_offsets = [
-      Offset(badger2040.WIDTH // 4 * 1, 96) - Offset(32, 16),
-      Offset(badger2040.WIDTH // 4 * 2, 96) - Offset(32, 16),
-      Offset(badger2040.WIDTH // 4 * 3, 96) - Offset(32, 16),
+      Offset(badger2040w.WIDTH // 4 * 1, 96) - Offset(32, 16),
+      Offset(badger2040w.WIDTH // 4 * 2, 96) - Offset(32, 16),
+      Offset(badger2040w.WIDTH // 4 * 3, 96) - Offset(32, 16),
   ]
 
   def __init__(self, game: Game):
@@ -73,19 +73,19 @@ class StatScreen(Widget):
     from blaseball2040.pitch_screen import (BallScreen, OutScreen, PitchScreen,
                                             StrikeScreen)
 
-    if pressed[badger2040.BUTTON_A]:
+    if pressed[badger2040w.BUTTON_A]:
       self.selected_index = (self.selected_index - 1) % 3
       return True
 
-    elif pressed[badger2040.BUTTON_B]:
+    elif pressed[badger2040w.BUTTON_B]:
       app.child = PitchScreen(self.game)
       return True
 
-    elif pressed[badger2040.BUTTON_C]:
+    elif pressed[badger2040w.BUTTON_C]:
       self.selected_index = (self.selected_index + 1) % 3
       return True
 
-    elif pressed[badger2040.BUTTON_UP]:
+    elif pressed[badger2040w.BUTTON_UP]:
       if self.selected_index == Selection.OUTS:
         self.game.outs += 1
         if self.game.outs >= 3:
@@ -100,7 +100,7 @@ class StatScreen(Widget):
           app.child = BallScreen(self.game)
       return True
 
-    elif pressed[badger2040.BUTTON_DOWN]:
+    elif pressed[badger2040w.BUTTON_DOWN]:
       if self.selected_index == Selection.OUTS:
         self.game.outs = max(self.game.outs - 1, 0)
       elif self.selected_index == Selection.STRIKES:

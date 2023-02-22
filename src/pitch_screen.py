@@ -1,4 +1,4 @@
-import badger2040
+import badger2040w
 from badger_ui import App, Offset, Size, Widget
 from badger_ui.align import Center
 from badger_ui.column import Column
@@ -21,15 +21,15 @@ class PitchScreen(Widget):
     self.child: Widget | None = None
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_UP]:
+    if pressed[badger2040w.BUTTON_UP]:
       self.pitch += 1
       return True
 
-    elif pressed[badger2040.BUTTON_DOWN]:
+    elif pressed[badger2040w.BUTTON_DOWN]:
       self.pitch = max(self.pitch - 1, 0)
       return True
 
-    elif pressed[badger2040.BUTTON_B]:
+    elif pressed[badger2040w.BUTTON_B]:
       app.child = BatScreen(self.game, self.pitch)
       return True
 
@@ -89,15 +89,15 @@ class BatScreen(Widget):
     return self.base == 0
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_UP]:
+    if pressed[badger2040w.BUTTON_UP]:
       self.bat += 1
       return True
 
-    elif pressed[badger2040.BUTTON_DOWN]:
+    elif pressed[badger2040w.BUTTON_DOWN]:
       self.bat = max(self.bat - 1, 0)
       return True
 
-    elif pressed[badger2040.BUTTON_B]:
+    elif pressed[badger2040w.BUTTON_B]:
       if self.ball:
         self.game.balls += 1
         app.child = BallScreen(self.game)
@@ -194,18 +194,18 @@ class AskCatchScreen(Widget):
     self.child: Widget | None = None
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_A]:
+    if pressed[badger2040w.BUTTON_A]:
       self.catch = not self.catch
       return True
 
-    elif pressed[badger2040.BUTTON_B]:
+    elif pressed[badger2040w.BUTTON_B]:
       if self.catch:
         app.child = CatchScreen(self.game, self.pitch, self.bat + 1)
       else:
         app.child = RunsScreen(self.game)
       return True
 
-    elif pressed[badger2040.BUTTON_C]:
+    elif pressed[badger2040w.BUTTON_C]:
       self.catch = not self.catch
       return True
 
@@ -282,15 +282,15 @@ class CatchScreen(Widget):
     return self.bat - self.catch < 0
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_UP]:
+    if pressed[badger2040w.BUTTON_UP]:
       self.catch += 1
       return True
 
-    elif pressed[badger2040.BUTTON_DOWN]:
+    elif pressed[badger2040w.BUTTON_DOWN]:
       self.catch = max(self.catch - 1, 0)
       return True
 
-    elif pressed[badger2040.BUTTON_B]:
+    elif pressed[badger2040w.BUTTON_B]:
       if self.out:
         self.game.outs += 1
         self.game.balls = 0
@@ -387,7 +387,7 @@ class BallScreen(Widget):
     return self.game.balls >= 4
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_B]:
+    if pressed[badger2040w.BUTTON_B]:
       self.game.balls %= 4
       if self.walk:
         app.child = RunsScreen(self.game)
@@ -442,7 +442,7 @@ class StrikeScreen(Widget):
     return self.game.strikes >= 3
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_B]:
+    if pressed[badger2040w.BUTTON_B]:
       if self.switch:
         app.child = OutScreen(self.game)
       elif self.out:
@@ -500,7 +500,7 @@ class OutScreen(Widget):
     return self.switch and self.game.inning == Inning.BOTTOM
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_B]:
+    if pressed[badger2040w.BUTTON_B]:
       if self.over:
         self.game.inning += 1
         self.game.outs = 0
@@ -572,7 +572,7 @@ class RunsScreen(Widget):
     self.runs_text: TextWidget | None = None
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_B]:
+    if pressed[badger2040w.BUTTON_B]:
       if self.game.inning == Inning.TOP:
         self.game.score1 += self.runs
       elif self.game.inning == Inning.BOTTOM:
@@ -582,11 +582,11 @@ class RunsScreen(Widget):
       app.child = StatScreen(self.game)
       return True
 
-    elif pressed[badger2040.BUTTON_UP]:
+    elif pressed[badger2040w.BUTTON_UP]:
       self.runs += 1
       return True
 
-    elif pressed[badger2040.BUTTON_DOWN]:
+    elif pressed[badger2040w.BUTTON_DOWN]:
       self.runs = max(self.runs - 1, 0)
       return True
 

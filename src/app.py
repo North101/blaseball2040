@@ -1,4 +1,4 @@
-import badger2040
+import badger2040w
 from badger_ui import App
 from blaseball2040.splash_screen import SplashScreen
 
@@ -10,7 +10,7 @@ class MyApp(App):
     self.child = SplashScreen()
 
   def on_button(self, app: 'App', pressed: dict[int, bool]) -> bool:
-    if pressed[badger2040.BUTTON_USER]:
+    if pressed[badger2040w.BUTTON_USER]:
       app.child = SplashScreen()
       return True
 

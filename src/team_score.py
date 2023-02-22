@@ -65,7 +65,7 @@ class TeamScore(Widget):
     self.build(app, size, offset)
 
     if self.selected:
-      app.display.pen(0)
+      app.display.set_pen(0)
       app.display.rectangle(
           offset.x,
           offset.y,
